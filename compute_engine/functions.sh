@@ -10,7 +10,7 @@ function create_instance {
     read vm_name
     if [ ! -z "$vm_name" ]; then
         echo "Start create " $vm_name " virtual machine"
-        gcloud compute instances create $vm_name --machine-type f1-micro --image $DEFAULT_OS_IMAGE_TYPE --zone $DEFAULT_ZONE
+        gcloud compute instances create $vm_name --machine-type f1-micro --image $DEFAULT_OS_IMAGE_TYPE --zone $DEFAULT_ZONE --scopes datastore userinfo-email
     fi
 }
 
